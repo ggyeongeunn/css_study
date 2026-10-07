@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+p::before {
+  content: "😎";
+  font-size: 20px;
+}
+p::after {
+  content: "🍳";
+}
+h2::after {
+  content: "\f015";
+  font-family: "Font Awesome 6 Free";
+  color: #ddd;
+}
+.fa-house {
+  font-size: 36px;
+  color: #aaa;
+}

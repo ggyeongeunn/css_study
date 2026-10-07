@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/example.css" />
+    <script>
+      $(document).ready(function () {
+        // // reset light mode
+        $(".mode").addClass("light");
+        $("body").css("background-color", "#f9fcff");
+        $(".tab li").click(function () {
+          let index = $(".tab li").index(this);
+
+          if (index == 0) {
+            $(".mode").addClass("light").removeClass("dark custom");
+            $("body").css("background-color", "#f9fcff");
+          } else if (index == 1) {
+            $(".mode").addClass("dark").removeClass("light custom");
+            $("body").css("background-color", "#333");
+          } else if (index == 2) {
+            $(".mode").addClass("custom").removeClass("light dark");
+            $("body").css("background-color", "#fff7de");
+          }
+        });
+      });
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="mode">
+      <ul class="tab">
+        <li>Light</li>
+        <li>Dark</li>
+        <li>Custom</li>
+      </ul>
+      <h3>Hello, World!</h3>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+      <button>Primary button</button>
+    </div>
+  </body>
+</html>

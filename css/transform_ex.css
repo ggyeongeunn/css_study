@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+.img {
+  width: 500px;
+  height: 300px;
+  margin: 100px auto;
+  position: relative;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+}
+.img:hover:before {
+  background-color: #00000080;
+}
+.img p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 1px #ddd;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.5s;
+}
+.img p:after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+.img:hover p {
+  opacity: 1;
+}
+.img:hover p:after {
+  width: 100%;
+}
+
+.box {
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.box::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+  transition: 0.5s;
+}
+.box p {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  bottom: -100%;
+  z-index: 9;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  transition: 0.4s ease-out;
+  transition-delay: 0.2s;
+}
+.box:hover::after {
+  top: 0;
+}
+.box:hover p {
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+}
+.box span {
+  position: absolute;
+  z-index: 9;
+  transition: 0.2s;
+}
+.box span:first-of-type {
+  right: -100%;
+  top: 40%;
+  transition-delay: 0.4s;
+}
+.box span:last-of-type {
+  position: absolute;
+  left: -100%;
+  top: 55%;
+  transition-delay: 0.8s;
+}
+.box:hover span:first-of-type {
+  right: 15%;
+}
+.box:hover span:last-of-type {
+  left: 20%;
+}

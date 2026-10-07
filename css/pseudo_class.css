@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+ul li:first-child {
+  color: #e01d1d;
+}
+ul li:last-child {
+  color: #45b818;
+}
+ul li:nth-child(2) {
+  color: #ffc75f;
+}
+ul li:nth-child(even) {
+  background-color: #3b742d40;
+}
+ul li:nth-child(odd) {
+  background-color: #342d7440;
+}
+/* .box p {
+  color: #c02929;
+}
+.box p + p {
+  background-color: #ddd;
+} */
+
+p + p {
+  background-color: beige;
+}
+h2 + p {
+  color: brown;
+}
+h2 ~ p {
+  color: blue;
+}

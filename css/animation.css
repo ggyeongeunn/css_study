@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+.loading {
+  width: 50px;
+  height: 50px;
+  border: 8px solid #dddddd50;
+  border-radius: 50%;
+  border-left-color: #2e66ff;
+  animation: loading 3s linear infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+button {
+  background-color: #fff;
+  border: 1px solid #cdd1d5;
+  padding: 8px 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+  animation: btn 1.5s ease infinite;
+}
+button:hover {
+  background-color: #ddd;
+}
+@keyframes btn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.banner {
+  width: 600px;
+  height: 80px;
+  padding: 80px 40px;
+  background-color: #064300;
+  text-align: center;
+}
+.banner h1 {
+  margin: 0;
+  color: #ff7a18;
+  animation: titleShow 1s ease-in-out;
+}
+.banner p {
+  color: #ede5dc;
+  margin: 0;
+  margin-top: 10px;
+  font-weight: bold;
+  animation: textShow 1s ease-in 1s;
+  animation-fill-mode: backwards;
+}
+@keyframes titleShow {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes textShow {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.alarm {
+  display: inline-block;
+  font-size: 50px;
+  animation: alarm 0.5s ease-in-out infinite;
+}
+
+@keyframes alarm {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+#loading {
+  width: 600px;
+  height: 40px;
+  background-color: lightblue;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+#loading > div {
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  transform: skew(-24deg);
+  animation: flowRight 4s linear infinite;
+}
+#loading > div > div {
+  flex: 1;
+}
+#loading > div > div:nth-child(odd) {
+  background-color: #527dcc;
+}
+@keyframes flowRight {
+  from {
+    left: -600px;
+  }
+  to {
+    left: 0;
+  }
+}
